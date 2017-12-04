@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,9 +27,10 @@
     <script>
     function checkCookies() {
         var language = getParameterByName("language");
-        if (language) {
-            document.getElementById("language").innerHTML = language;
-        }
+       // if (language) {
+            $('#language').append("<b>" + language + "</b>");
+            //document.getElementById("language").innerHTML = language;
+       // }
     }
 
     function getParameterByName(name) {
