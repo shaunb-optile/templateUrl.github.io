@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment Page</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding:0;
+        }
+        .main-container{
+            margin: 25px auto 0;
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body onload="checkCookies()">
+    <h3 id="language"></h3>
+    <div class="main-container">
+        <!-- TRUSTLY-PAYMENT-PAGE-GOES-HERE -->
+    </div>
+    <script>
+    function checkCookies() {
+        var language = getParameterByName("language");
+        document.getElementById("language").innerHTML = language;
+    }
+
+    function getParameterByName(name) {
+        url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+         results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    </script>
+</body>
+</html>
